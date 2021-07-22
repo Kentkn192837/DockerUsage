@@ -31,7 +31,12 @@ docker ps -a
 docker run <image-name>
 ```
 
+#### イメージの削除
+```
+docker rmi <image-name>or<image-ID>
+```
+
 #### コンテナの削除
 ```
-docker rm <container-name>
+docker rm <container-name>or<container-ID>
 ```
