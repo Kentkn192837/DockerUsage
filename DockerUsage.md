@@ -10,7 +10,7 @@ docker images
 docker ps -a
 ```
 
-- CONTAINER ID&#010;
+- CONTAINER ID<br>
 コンテナのID
 - IMAGE&#010;
 使用したDockerイメージ
