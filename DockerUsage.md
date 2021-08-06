@@ -123,3 +123,23 @@ docker-compose down
 docker-compose down --rmi all
 
 ```
+
+#### docker-compose.yml 記述メモ
+公式リファレンスのサンプル
+```
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+    - "5000:5000" # ホスト側:コンテナ側
+    volumes:
+    - .:/code
+    - logvolume01:/var/log
+    links:
+    - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
+```
