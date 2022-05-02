@@ -67,6 +67,17 @@ docker start <コンテナ名>
 docker stop <コンテナ名>
 ```
 
+### コンテナのログの確認
+起動ログを見る場合
+```
+docker logs <コンテナ名>
+```
+
+追従したログの表示
+```
+docker logs -f <コンテナ名>
+```
+
 ### Dockerfile
 https://knowledge.sakura.ad.jp/15253/
 公開されているDockerイメージをそのまま使うのではなく、必要なパッケージやアプリ、各種設定を含んだDockerイメージを自分で作成して使用するケースが出てくる。その場合、Dockerfileを作成し、それを使用して必要なDockerイメージを作成することができます。Dockerfileには、ベースとするDockerイメージに対して実行する内容を記述する。
