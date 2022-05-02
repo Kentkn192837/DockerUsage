@@ -1,5 +1,8 @@
 # Docker コマンドチートシート
 
+#### Docker公式リファレンス
+日本語版: https://docs.docker.jp/
+
 #### ローカル環境のDockerイメージの取得
 ```
 docker images
@@ -59,6 +62,11 @@ docker cp <コンテナ名>:<コンテナ内のコピー元ファイル> <ホス
 #### コンテナからDockerイメージ作成
 ```
 docker commit <コンテナ名> <作成するDockerイメージ名>
+```
+
+#### イメージやコンテナの詳細を確認
+```
+docker inspect <イメージ名>or<コンテナ名>
 ```
 
 #### コンテナ起動、停止
@@ -130,4 +138,24 @@ docker-compose down
 # イメージもあわせて削除する場合
 docker-compose down --rmi all
 
+```
+
+#### docker-compose.yml 記述メモ
+公式リファレンスのサンプル
+```
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+    - "5000:5000" # ホスト側:コンテナ側
+    volumes:
+    - .:/code
+    - logvolume01:/var/log
+    links:
+    - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
 ```
